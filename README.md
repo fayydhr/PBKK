@@ -1,3 +1,32 @@
+**Aplikasi To-Do List dengan Laravel**
+
+Aplikasi To-Do List ini dibangun menggunakan Laravel yang mengimplementasikan operasi dasar CRUD (Create, Read, Update, Delete) serta manajemen Kategori. Aplikasi ini juga menunjukkan penggunaan Eloquent Relationships antara tabel Tasks (Todos) dan Categories, sehingga memudahkan dalam mengelola dan mengorganisir tugas berdasarkan kategori.
+
+**Fitur**
+Menambah, mengedit, dan menghapus tugas.
+Mengelompokkan tugas berdasarkan kategori yang sudah ditentukan.
+Pencarian tugas berdasarkan nama tugas atau kategori.
+Menandai tugas sebagai selesai atau belum selesai.
+
+
+
+**Model & Relasi**
+Aplikasi ini menggunakan Eloquent ORM untuk mengelola relasi antar tabel. Berikut adalah relasi utama yang digunakan:
+
+Todos (Tasks) memiliki many-to-one relationship dengan Categories.
+Setiap tugas (todo) dikategorikan ke dalam satu kategori (category).
+Pada TodosController, kita menggunakan with('category') untuk mengakses data kategori yang terkait dengan setiap tugas.
+Tabel Database yang Digunakan:
+todos
+
+Kolom: id, task, is_done, category_id, created_at, updated_at
+Relasi: Berelasi dengan categories melalui category_id.
+categories
+
+Kolom: id, name, created_at, updated_at
+Relasi: Memiliki banyak tugas (todos).
+
+
 ![image](https://github.com/user-attachments/assets/6392af16-6e0a-4e83-8bb2-f8e39928d8c3)
 
 
